@@ -1,49 +1,49 @@
-.banner-home {
+.subscribe-membership {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
 
-  .banner-content {
+  @media screen and (max-width: 1200px) {
+    padding: 3rem 2rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 2rem 1rem;
+  }
+
+  .subscribe-membership-content {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 5rem;
 
-    @media screen and (max-width: 1200px) {
-      padding-left: 0;
-    }
-
-    .c-banner-content {
-      width: 100%;
-
-      @media screen and (max-width: 1200px) {
-        padding: 8rem 2rem 3rem;
-        width: 50%;
-      }
-
-      @media screen and (max-width: 860px) {
-        width: 80%;
-      }
-
-      @media screen and (max-width: 640px) {
-        width: 100%;
-      }
-
+    .c-subscribe-membership {
       h2 {
-        width: 100%;
+        width: 60%;
         font-weight: 600;
         font-size: 3rem;
-        line-height: 4.375rem;
-        margin-bottom: 5rem;
+        line-height: 4rem;
+        margin-bottom: 2rem;
+
+        @media screen and (max-width: 1620px) {
+          width: 80%;
+        }
 
         @media screen and (max-width: 1200px) {
           margin-bottom: 2rem;
           text-align: center;
+          width: 100%;
         }
 
-        @media screen and (max-width: 540px) {
+        @media screen and (max-width: 640px) {
           line-height: 3.5rem;
+        }
+
+        @media screen and (max-width: 380px) {
+          font-size: 2.5rem;
+          line-height: 3rem;
         }
       }
 
@@ -64,30 +64,24 @@
         }
 
         button {
-          padding: 0.5rem 0.875rem;
-          background: var(--green-300);
           border: 0;
+          padding: 0 2rem;
+          background: var(--green-300);
+          color: var(--white);
           border-radius: 5px;
-          font-size: 0;
-
-          .magnifier-search {
-            height: 1.5rem;
-            width: 1.5rem;
-          }
+          box-shadow: rgba(186, 220, 88, 0.5) 0px 13px 27px -5px,
+            rgba(186, 220, 88, 0.7) 0px 8px 16px -8px;
+          font-size: 1.2rem;
         }
       }
     }
   }
 
-  .banner-image {
+  .subscribe-image {
+    display: flex;
+
     @media screen and (max-width: 1200px) {
       display: none;
-    }
-
-    img {
-      @media screen and (max-width: 1440px) {
-        height: 600px;
-      }
     }
   }
 }

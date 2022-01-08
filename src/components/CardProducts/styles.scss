@@ -7,35 +7,74 @@
   border-radius: 7px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-  img {
-    display: block;
+  & div:first-child {
+    display: flex;
     width: 50%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
   }
 
   & div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 50%;
     background: var(--white);
     padding: 2rem;
+
+    @media screen and (max-width: 540px) {
+      padding: 1rem;
+    }
+
+    @media screen and (max-width: 380px) {
+      padding: 0.7rem;
+    }
+
+    @media screen and (max-width: 380px) {
+      padding: 0.5rem;
+    }
 
     h3 {
       font-size: 1.5rem;
       line-height: 2.5rem;
       letter-spacing: 0.1rem;
-      margin-bottom: 1.5rem;
+
+      @media screen and (max-width: 460px) {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+      }
+
+      @media screen and (max-width: 380px) {
+        font-size: 1.2rem;
+      }
     }
 
     button {
+      align-self: flex-start;
       background: var(--green-300);
       color: var(--white);
       border: 0;
       border-radius: 8px;
       padding: 1rem;
-      transition: filter 0.3s;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+
+      @media screen and (max-width: 460px) {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+      }
+
+      @media screen and (max-width: 360px) {
+        padding: 0.5rem 0.7rem;
+      }
 
       &:hover {
         filter: brightness(0.95);
+        transform: scale(1.05);
       }
     }
   }

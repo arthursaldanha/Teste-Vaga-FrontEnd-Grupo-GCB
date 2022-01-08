@@ -18,7 +18,12 @@ export const SidebarMenu = ({
     <div className={bgSidebarMenu} onClick={handleClickOutside}>
       <aside className={`sidebar-menu ${isScrollActive ? "--scrolling" : ""}`}>
         <div>
-          <h1>Arthur Saldanha</h1>
+          <p className={`${isScrollActive ? "--scrolling" : ""}`}>
+            Healthy recipes
+          </p>
+          <p className={`${isScrollActive ? "--scrolling" : ""}`}>Blog</p>
+          <p className={`${isScrollActive ? "--scrolling" : ""}`}>Join</p>
+          <p className={`${isScrollActive ? "--scrolling" : ""}`}>Register</p>
         </div>
       </aside>
     </div>

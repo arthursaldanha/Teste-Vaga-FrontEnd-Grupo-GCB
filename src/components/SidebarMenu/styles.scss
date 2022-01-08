@@ -7,12 +7,13 @@
   left: 0;
   z-index: 2;
   animation: 0.4s ease-in-out both fadeIn;
+  cursor: pointer;
 }
 
 .sidebar-menu {
   height: 100%;
   width: 380px;
-  padding: 8rem 2rem 2rem;
+  padding: 7rem 2rem 2rem;
   background: var(--white);
   position: fixed;
   z-index: 3;
@@ -20,9 +21,34 @@
   right: 0;
   transition: all 0.2s ease;
   animation: 0.4s ease-in-out both goBack;
+  cursor: default;
 
   &.--scrolling {
     background: var(--green-400);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      width: 100%;
+      padding: 1.5rem 1rem;
+      color: var(--blue-800);
+      font-size: 1.8rem;
+      border-radius: 7px;
+      transition: all 0.3 ease;
+      cursor: pointer;
+
+      &.--scrolling {
+        color: var(--white);
+      }
+
+      &:hover {
+        background: var(--gray-50);
+      }
+    }
   }
 
   @media screen and (max-width: 460px) {
