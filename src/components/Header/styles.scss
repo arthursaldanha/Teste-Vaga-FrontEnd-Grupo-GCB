@@ -1,0 +1,105 @@
+.header {
+  min-height: 6.45rem;
+  width: 100%;
+  padding: 0 2rem;
+  background: transparent;
+  border: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .c-header {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      color: var(--green-300);
+      transition: color 0.2s ease;
+
+      &.--scrolling {
+        color: var(--white);
+      }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: auto;
+
+      &.--disabled {
+        display: none;
+      }
+
+      span {
+        font: normal normal 600 1rem "Muli", sans-serif;
+        color: var(--white);
+        text-transform: uppercase;
+        margin-right: 4rem;
+        transition: all 0.2s ease;
+
+        @media screen and (max-width: 1440px) {
+          margin-right: 2rem;
+        }
+
+        @media screen and (max-width: 1200px) {
+          color: var(--green-300);
+
+          &.--scrolling {
+            color: var(--white);
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border: 0;
+        border-radius: 5px;
+        background: var(--white);
+        color: var(--green-300);
+        font: normal normal 600 1rem "Muli", sans-serif;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1200px) {
+          background: var(--green-300);
+          color: var(--white);
+        }
+      }
+    }
+
+    .button-sidebar-menu {
+      width: 2rem;
+      height: 2rem;
+      transition: color 0.2s ease;
+      user-select: none; /* standard syntax */
+      -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+      -moz-user-select: none; /* mozilla browsers */
+      -khtml-user-select: none; /* webkit (konqueror) browsers */
+      -ms-user-select: none; /* IE10+ */
+    }
+  }
+
+  &.--scrolling {
+    background: var(--green-400);
+  }
+
+  @media screen and (max-width: 1200px) {
+    background: var(--white);
+  }
+}

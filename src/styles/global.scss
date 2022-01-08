@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+
+  --gray-50: #fafafc;
+  --gray-300: #bcbcbc;
+
+  --green-300: #badc58;
+  --green-400: #8ed062;
+
+  --blue-800: #1d164d;
+
+  --black: #000;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("../assets/fonts/Muli.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("../assets/fonts/Muli-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; // 15px
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%; // 14px
+  }
+}
+
+html,
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+body {
+  background: var(--purple-300);
+}
+
+body,
+input,
+textarea,
+button {
+  font: 400 1rem "Muli", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--blue-800);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+}

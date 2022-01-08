@@ -1,0 +1,49 @@
+.dark-bg-sidebar-menu {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: 0.4s ease-in-out both fadeIn;
+}
+
+.sidebar-menu {
+  height: 100%;
+  width: 380px;
+  padding: 8rem 2rem 2rem;
+  background: var(--white);
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  right: 0;
+  transition: all 0.2s ease;
+  animation: 0.4s ease-in-out both goBack;
+
+  &.--scrolling {
+    background: var(--green-400);
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes goBack {
+  0% {
+    transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
