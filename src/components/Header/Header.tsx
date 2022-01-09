@@ -27,7 +27,13 @@ export const Header = () => {
     window.innerWidth > 980
       ? changeVisibilityNavbar(false)
       : changeVisibilityNavbar(true);
-  }, []);
+  }, [changeVisibilityNavbar]);
+
+  useEffect(() => {
+    isSidebarMenuActive
+      ? (window.document.body.style.overflowY = "hidden")
+      : (window.document.body.style.overflowY = "auto");
+  }, [isSidebarMenuActive]);
 
   window.onscroll = function () {
     var top = window.pageYOffset || document.documentElement.scrollTop;

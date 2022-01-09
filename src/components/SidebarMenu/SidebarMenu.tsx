@@ -13,7 +13,8 @@ interface SidebarMenuProps {
 export const SidebarMenu = ({
   bgSidebarMenu = "dark-bg-sidebar-menu",
 }: SidebarMenuProps) => {
-  const { isScrollActive, handleOpenSidebarMenu } = useMenuSidebar();
+  const { isScrollActive, handleOpenSidebarMenu, handleClickedMenu } =
+    useMenuSidebar();
 
   const handleClickOutside = (e) => {
     if (e.target.className === bgSidebarMenu) handleOpenSidebarMenu(false);
@@ -27,7 +28,11 @@ export const SidebarMenu = ({
         <div>
           {sidebarMenuContent.map(({ content, path }) => {
             return (
-              <Link to={path} className={styleIsScrollActive}>
+              <Link
+                to={path}
+                className={styleIsScrollActive}
+                onClick={handleClickedMenu}
+              >
                 <span>{content}</span>
               </Link>
             );

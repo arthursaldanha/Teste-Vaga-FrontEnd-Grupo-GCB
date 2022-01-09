@@ -6,6 +6,7 @@ import { AboutServices } from "./AboutServices/AboutServices";
 import { ReadOurBlog } from "./ReadBlog/ReadOurBlog";
 import { SubscribeMembership } from "./SubscribeMermership/SubscribeMermership";
 import { Footer } from "./Footer/Footer";
+import { RegisterNewUser } from "./Register/Register";
 
 export {
   Header,
@@ -14,5 +15,6 @@ export {
   AboutServices,
   ReadOurBlog,
   SubscribeMembership,
+  RegisterNewUser,
   Footer,
 };

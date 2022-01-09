@@ -11,6 +11,7 @@ interface MenuContextData {
   handleOpenSidebarMenu: (state: boolean) => void;
   onIsScrollActive: (state: boolean) => void;
   changeVisibilityNavbar: (state: boolean) => void;
+  handleClickedMenu: () => void;
 }
 
 export const OpenMenuContext = createContext({} as MenuContextData);
@@ -32,6 +33,11 @@ export const OpenMenuProvider = ({ children }: OpenMenuProviderProps) => {
     setIsNavbarShowing(state);
   };
 
+  const handleClickedMenu = () => {
+    window.scrollTo(0, 0);
+    setIsSidebarMenuActive(false);
+  };
+
   return (
     <OpenMenuContext.Provider
       value={{
@@ -41,6 +47,7 @@ export const OpenMenuProvider = ({ children }: OpenMenuProviderProps) => {
         handleOpenSidebarMenu,
         onIsScrollActive,
         changeVisibilityNavbar,
+        handleClickedMenu,
       }}
     >
       {children}
