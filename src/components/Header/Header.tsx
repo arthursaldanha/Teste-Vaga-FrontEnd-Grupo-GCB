@@ -1,10 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+// Contexts
+import { useMenuSidebar } from "../../contexts/OpenSidebarMenu";
+
+// Icons
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
-import { useMenuSidebar } from "../../contexts/OpenSidebarMenu";
+
+// Components
 import { SidebarMenu } from "../SidebarMenu/SidebarMenu";
 
 import "./styles.scss";
+
 export const Header = () => {
   const {
     isSidebarMenuActive,
@@ -42,10 +50,18 @@ export const Header = () => {
         <div className="c-header">
           <h1 className={classNameChangingOnScroll}>Healthy Food</h1>
           <nav className={`navbar ${isNavbarShowing ? "--disabled" : ""}`}>
-            <span className={classNameChangingOnScroll}>healthy recipes</span>
-            <span className={classNameChangingOnScroll}>blog</span>
-            <span className={classNameChangingOnScroll}>join</span>
-            <button type="button">register</button>
+            <Link to="/">
+              <span className={classNameChangingOnScroll}>healthy recipes</span>
+            </Link>
+            <Link to="/">
+              <span className={classNameChangingOnScroll}>blog</span>
+            </Link>
+            <Link to="/">
+              <span className={classNameChangingOnScroll}>join</span>
+            </Link>
+            <Link to="/register">
+              <button type="button">register</button>
+            </Link>
           </nav>
 
           {isNavbarShowing &&
