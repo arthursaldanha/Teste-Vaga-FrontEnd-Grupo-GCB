@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // Contexts
 import { useMenuSidebar } from "../../contexts/OpenSidebarMenu";
@@ -22,6 +23,8 @@ export const Header = () => {
     onIsScrollActive,
     changeVisibilityNavbar,
   } = useMenuSidebar();
+
+  const location = useLocation();
 
   useEffect(() => {
     window.innerWidth > 980
@@ -49,39 +52,48 @@ export const Header = () => {
     width > 980 ? changeVisibilityNavbar(false) : changeVisibilityNavbar(true);
   };
 
-  const classNameChangingOnScroll = isScrollActive ? "--scrolling" : "";
+  const changingOnScroll = isScrollActive ? "--scrolling" : "";
+  const changingOnSidebarMenuActive = isSidebarMenuActive
+    ? "--sidebar_active"
+    : "";
   return (
     <>
-      <header className={`header ${classNameChangingOnScroll}`}>
+      <header
+        className={`header ${changingOnScroll} ${changingOnSidebarMenuActive}`}
+      >
         <div className="c-header">
-          <h1 className={classNameChangingOnScroll}>Healthy Food</h1>
+          <h1 className={changingOnScroll}>Healthy Food</h1>
           <nav className={`navbar ${isNavbarShowing ? "--disabled" : ""}`}>
             <Link to="/">
-              <span className={classNameChangingOnScroll}>healthy recipes</span>
+              <span className={changingOnScroll}>healthy recipes</span>
             </Link>
             <Link to="/">
-              <span className={classNameChangingOnScroll}>blog</span>
+              <span className={changingOnScroll}>blog</span>
             </Link>
             <Link to="/">
-              <span className={classNameChangingOnScroll}>join</span>
+              <span className={changingOnScroll}>join</span>
             </Link>
-            <Link to="/register">
-              <button type="button">register</button>
-            </Link>
+            {location.pathname !== "/register" && (
+              <Link to="/register">
+                <button type="button" className={changingOnScroll}>
+                  register
+                </button>
+              </Link>
+            )}
           </nav>
 
           {isNavbarShowing &&
             (isSidebarMenuActive ? (
               <div onClick={() => handleOpenSidebarMenu(false)}>
                 <IoMdClose
-                  color={isScrollActive ? "#fff" : "#badc58"}
+                  color={isScrollActive ? "#1d164d" : "#badc58"}
                   className="button-sidebar-menu"
                 />
               </div>
             ) : (
               <div onClick={() => handleOpenSidebarMenu(true)}>
                 <FiMenu
-                  color={isScrollActive ? "#fff" : "#badc58"}
+                  color={isScrollActive ? "#1d164d" : "#badc58"}
                   className="button-sidebar-menu"
                 />
               </div>

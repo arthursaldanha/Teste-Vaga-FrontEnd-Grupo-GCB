@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   z-index: 4;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,10 +27,10 @@
       display: flex;
       align-items: center;
       color: var(--green-300);
-      transition: color 0.2s ease;
+      transition: color 0.3s ease;
 
       &.--scrolling {
-        color: var(--white);
+        color: var(--blue-800);
       }
     }
 
@@ -44,22 +44,28 @@
         display: none;
       }
 
-      span {
-        font: normal normal 600 1rem "Muli", sans-serif;
-        color: var(--white);
-        text-transform: uppercase;
-        margin-right: 4rem;
-        transition: all 0.2s ease;
-
-        @media screen and (max-width: 1440px) {
-          margin-right: 2rem;
-        }
-
-        @media screen and (max-width: 1200px) {
-          color: var(--green-300);
+      a {
+        span {
+          font: normal normal 600 1rem "Muli", sans-serif;
+          color: var(--white);
+          text-transform: uppercase;
+          margin-right: 4rem;
+          transition: all 0.3s ease;
 
           &.--scrolling {
-            color: var(--white);
+            color: var(--blue-800);
+          }
+
+          @media screen and (max-width: 1440px) {
+            margin-right: 2rem;
+          }
+
+          @media screen and (max-width: 1200px) {
+            color: var(--green-300);
+
+            &.--scrolling {
+              color: var(--blue-800);
+            }
           }
         }
       }
@@ -75,6 +81,12 @@
         color: var(--green-300);
         font: normal normal 600 1rem "Muli", sans-serif;
         text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &.--scrolling {
+          background: var(--blue-800);
+          color: var(--white);
+        }
 
         @media screen and (max-width: 1200px) {
           background: var(--green-300);
@@ -97,7 +109,14 @@
   }
 
   &.--scrolling {
-    background: var(--green-400);
+    background: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  &.--sidebar_active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 
   @media screen and (max-width: 1200px) {

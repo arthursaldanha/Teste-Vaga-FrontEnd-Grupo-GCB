@@ -23,9 +23,9 @@
   animation: 0.4s cubic-bezier(0.5, 0.1, 0.44, 0.82) goBack;
   cursor: default;
 
-  &.--scrolling {
+  /* &.--scrolling {
     background: var(--green-400);
-  }
+  } */
 
   div {
     height: 100%;
@@ -36,7 +36,7 @@
     a {
       width: 100%;
       padding: 1.5rem 1rem;
-      color: var(--blue-800);
+      color: var(--green-400);
       font-size: 1.8rem;
       border-radius: 7px;
       transition: all 0.3 ease;
@@ -47,7 +47,7 @@
       }
 
       &.--scrolling {
-        color: var(--white);
+        color: var(--blue-800);
       }
 
       &.--scrolling:hover {

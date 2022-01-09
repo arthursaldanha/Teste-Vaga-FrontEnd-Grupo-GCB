@@ -7,7 +7,7 @@ export const RegisterUserSchema = Yup.object().shape({
 
   dataDeNascimento: Yup.date()
     .max(new Date(), "A data limite é a do dia atual!")
-    .required("Required"),
+    .required("Este campo é obrigatório!"),
 
   cpf: Yup.string().max(14).required("Este campo é obrigatório!"),
 

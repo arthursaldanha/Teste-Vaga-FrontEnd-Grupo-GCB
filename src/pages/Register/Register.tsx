@@ -2,7 +2,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 // Components
-import { RegisterNewUser, Footer } from "../../components/Index";
+import { Header, RegisterNewUser, Footer } from "../../components/Index";
 
 import "./styles.scss";
 
@@ -12,6 +12,7 @@ export function Register() {
   return (
     <>
       <div className="register">
+        <Header />
         <div
           className="c-arrow-back"
           onClick={() => {

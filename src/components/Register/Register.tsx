@@ -72,7 +72,7 @@ export const RegisterNewUser = () => {
               name="nome"
               type="text"
               placeholder="Seu nome completo"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -80,7 +80,7 @@ export const RegisterNewUser = () => {
               label="Data de Nascimento:"
               name="dataDeNascimento"
               type="date"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -89,7 +89,7 @@ export const RegisterNewUser = () => {
               name="cpf"
               type="text"
               placeholder="Seu CPF"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -98,7 +98,7 @@ export const RegisterNewUser = () => {
               name="email"
               type="text"
               placeholder="Seu email"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -107,7 +107,7 @@ export const RegisterNewUser = () => {
               name="telefone"
               type="text"
               placeholder="Seu telefone"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -116,7 +116,7 @@ export const RegisterNewUser = () => {
               name="cep"
               type="text"
               placeholder="Seu CEP"
-              width={100}
+              width={50}
               onBlur={(event) => getCEP(event, setFieldValue)}
               errors={errors}
               touched={touched}
@@ -126,7 +126,7 @@ export const RegisterNewUser = () => {
               name="logradouro"
               type="text"
               placeholder="Seu logradouro"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -135,7 +135,7 @@ export const RegisterNewUser = () => {
               name="complemento"
               type="text"
               placeholder="Casa, apartamento, flat..."
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -144,7 +144,7 @@ export const RegisterNewUser = () => {
               name="bairro"
               type="text"
               placeholder="Bairro onde mora"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -153,7 +153,7 @@ export const RegisterNewUser = () => {
               name="cidade"
               type="text"
               placeholder="Cidade onde mora"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
@@ -162,7 +162,7 @@ export const RegisterNewUser = () => {
               name="uf"
               type="text"
               placeholder="Digite a UF de sua cidade!"
-              width={100}
+              width={50}
               errors={errors}
               touched={touched}
             />
