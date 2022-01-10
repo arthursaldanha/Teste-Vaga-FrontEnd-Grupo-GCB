@@ -36,12 +36,6 @@ export const Header = ({ onRegister }: HeaderProps) => {
       : changeVisibilityNavbar(true);
   }, [changeVisibilityNavbar]);
 
-  useEffect(() => {
-    isSidebarMenuActive && location.pathname !== "/"
-      ? (window.document.body.style.overflowY = "hidden")
-      : (window.document.body.style.overflowY = "auto");
-  }, [isSidebarMenuActive]);
-
   window.onscroll = function () {
     var top = window.pageYOffset || document.documentElement.scrollTop;
     top > 50 ? onIsScrollActive(true) : onIsScrollActive(false);
