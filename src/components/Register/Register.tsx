@@ -71,11 +71,10 @@ export const RegisterNewUser = () => {
             localStorage.getItem("userLS") || "[]"
           );
           userLocalStorage.push(values);
-          localStorage.setItem("user", JSON.stringify(userLocalStorage));
+          localStorage.setItem("userLS", JSON.stringify(userLocalStorage));
 
           // cookies
           Cookies.set("userCok", JSON.stringify(values));
-          console.log(Cookies.get("userCok"));
 
           toast.success(
             "Usuário criado com suscesso! Em instantes, você será redirecionado para a página inicial!",
