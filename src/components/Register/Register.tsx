@@ -1,6 +1,9 @@
 import axios from "axios";
 import { Formik, Form, FormikHelpers } from "formik";
 import { RegisterUserSchema } from "./SchemaYup";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 // Components
 import { Input, Row } from "../Index";
@@ -22,6 +25,7 @@ interface RegisterUser {
 }
 
 export const RegisterNewUser = () => {
+  const navigate = useNavigate();
   async function getCEP(event, setFieldValue: Function) {
     const { value } = event.target;
 
@@ -42,7 +46,7 @@ export const RegisterNewUser = () => {
 
   return (
     <div className="form-new-user">
-      <h2>Fill out the fields with your information</h2>
+      <h2>Preencha os campos abaixo com seus dados</h2>
       <Formik
         initialValues={{
           nome: "",
@@ -60,20 +64,40 @@ export const RegisterNewUser = () => {
         validationSchema={RegisterUserSchema}
         onSubmit={(
           values: RegisterUser,
-          { setSubmitting }: FormikHelpers<RegisterUser>
+          { setSubmitting, resetForm }: FormikHelpers<RegisterUser>
         ) => {
-          setTimeout(() => {
-            // localStorage
-            let user = JSON.parse(localStorage.getItem("user") || "[]");
-            user.push(values);
-            localStorage.setItem("user", JSON.stringify(user));
-            console.log("Salva com sucesso.");
+          // localStorage
+          let userLocalStorage = JSON.parse(
+            localStorage.getItem("userLS") || "[]"
+          );
+          userLocalStorage.push(values);
+          localStorage.setItem("user", JSON.stringify(userLocalStorage));
 
-            // alert(JSON.stringify(values, null, 2));
+          // cookies
+          Cookies.set("userCok", JSON.stringify(values));
+          console.log(Cookies.get("userCok"));
+
+          toast.success(
+            "Usuário criado com suscesso! Em instantes, você será redirecionado para a página inicial!",
+            {
+              position: "bottom-right",
+              autoClose: 5000,
+              theme: "colored",
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            }
+          );
+
+          setTimeout(() => {
             setSubmitting(false);
-          }, 500);
+            navigate("/");
+            resetForm();
+          }, 5000);
         }}
-        render={({ errors, touched, isValid, setFieldValue }) => (
+        render={({ errors, touched, setFieldValue }) => (
           <Form>
             <Row justify="flex-start" align="start">
               <Input
@@ -82,6 +106,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. João Guilherme de Araújo"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -93,6 +118,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="exemplo@exemplo.com"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -104,6 +130,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. 616.289.880-61"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -112,6 +139,7 @@ export const RegisterNewUser = () => {
                 name="dataDeNascimento"
                 type="date"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -123,6 +151,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. (11) 91234-5678"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -132,6 +161,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. 12345-678"
                 width={100}
+                autoComplete="off"
                 onBlur={(event) => getCEP(event, setFieldValue)}
                 errors={errors}
                 touched={touched}
@@ -144,6 +174,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. Rua Pedro Abreu de Souza"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -155,6 +186,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. Casa, apartamento, flat..."
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -164,6 +196,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. Ibirapuera"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -175,6 +208,7 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. São Paulo"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
@@ -184,15 +218,14 @@ export const RegisterNewUser = () => {
                 type="text"
                 placeholder="Ex. SP"
                 width={100}
+                autoComplete="off"
                 errors={errors}
                 touched={touched}
               />
             </Row>
 
             <Row justify="center" align="center">
-              <button type="submit" disabled={!isValid}>
-                Submit
-              </button>
+              <button type="submit">Submit</button>
             </Row>
           </Form>
         )}

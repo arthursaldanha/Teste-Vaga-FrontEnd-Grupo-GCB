@@ -6,18 +6,25 @@ export const RegisterUserSchema = Yup.object().shape({
     .required("Este campo é obrigatório!"),
 
   dataDeNascimento: Yup.date()
-    .max(new Date(), "A data limite é a do dia atual!")
+    .max(new Date(), "A data limite é o do dia atual!")
     .required("Este campo é obrigatório!"),
 
-  cpf: Yup.string().max(14).required("Este campo é obrigatório!"),
+  cpf: Yup.string()
+    .min(14, "O CPF possui 11 dígitos!")
+    .required("Este campo é obrigatório!"),
 
   email: Yup.string()
     .email("Digite um email válido!")
     .required("Este campo é obrigatório!"),
 
-  telefone: Yup.string().max(15).required("Este campo é obrigatório!"),
+  telefone: Yup.string()
+    .min(15, "O telefone possui 11 dígitos!")
+    .required("Este campo é obrigatório!"),
 
-  cep: Yup.string().max(9).required("Este campo é obrigatório!"),
+  cep: Yup.string()
+    .min(9, "O CEP possui 8 dígitos!")
+    .max(9, "O CEP possui 8 dígitos!")
+    .required("Este campo é obrigatório!"),
 
   bairro: Yup.string()
     .min(3, "Digite um bairro válido!")

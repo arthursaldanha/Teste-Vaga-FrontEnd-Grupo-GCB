@@ -37,7 +37,7 @@ export const Header = ({ onRegister }: HeaderProps) => {
   }, [changeVisibilityNavbar]);
 
   useEffect(() => {
-    isSidebarMenuActive
+    isSidebarMenuActive && location.pathname !== "/"
       ? (window.document.body.style.overflowY = "hidden")
       : (window.document.body.style.overflowY = "auto");
   }, [isSidebarMenuActive]);

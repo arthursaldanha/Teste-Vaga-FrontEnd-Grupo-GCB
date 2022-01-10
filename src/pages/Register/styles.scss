@@ -23,6 +23,10 @@
       border-radius: 7px;
       transition: all 0.3s ease;
 
+      @media screen and (max-width: 410px) {
+        font-size: 1.2rem;
+      }
+
       .arrow-back {
         width: 1.4rem;
         height: 1.4rem;
@@ -40,10 +44,13 @@
     display: flex;
     flex-direction: row;
     flex: 1;
-    // padding-top: 6.5rem;
+    position: relative;
+
+    /* @media screen and (max-width: 1024px) {
+      padding-top: 6.5rem;
+    } */
 
     .content-register-page {
-      position: relative;
       width: 50%;
       padding: 4rem;
       background: var(--gray-50);
@@ -69,11 +76,27 @@
         line-height: 2rem;
         color: var(--white);
       }
+
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
     }
 
     .form-register-page {
       width: 50%;
-      padding: 3.5rem 4rem;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        padding: 6rem 2rem 2rem;
+      }
+
+      @media screen and (max-width: 410px) {
+        padding: 6rem 1.5rem 2rem;
+      }
     }
   }
 }

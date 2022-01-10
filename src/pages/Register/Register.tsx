@@ -2,7 +2,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 // Components
-import { Header, RegisterNewUser, Footer } from "../../components/Index";
+import { RegisterNewUser } from "../../components/Index";
 
 import "./styles.scss";
 
@@ -12,20 +12,19 @@ export function Register() {
   return (
     <>
       <div className="register">
-        {/* <Header onRegister={true} /> */}
         <main className="c-register-form">
+          <div
+            className="c-arrow-back"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <button>
+              <BsArrowLeft className="arrow-back" />
+              Voltar
+            </button>
+          </div>
           <section className="content-register-page">
-            <div
-              className="c-arrow-back"
-              onClick={() => {
-                navigate(-1);
-              }}
-            >
-              <button>
-                <BsArrowLeft className="arrow-back" />
-                Voltar
-              </button>
-            </div>
             <h1>Sign Up</h1>
             <p>
               Far far away, behind the word mountains, far from the countries
@@ -40,7 +39,6 @@ export function Register() {
             <RegisterNewUser />
           </section>
         </main>
-        {/* <Footer /> */}
       </div>
     </>
   );
