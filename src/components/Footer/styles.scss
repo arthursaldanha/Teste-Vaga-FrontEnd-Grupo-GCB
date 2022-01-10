@@ -1,20 +1,16 @@
 .footer {
   background: var(--white);
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 
   @media screen and (max-width: 960px) {
     padding: 1rem 1rem;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     @media screen and (max-width: 960px) {
-      margin-bottom: 1rem;
-    }
-
-    @media screen and (max-width: 380px) {
-      font-size: 1rem;
+      margin-bottom: 0.8rem;
     }
   }
 

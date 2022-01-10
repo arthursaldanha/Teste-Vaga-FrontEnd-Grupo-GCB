@@ -1,0 +1,23 @@
+.wrapper-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .wrapper-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}

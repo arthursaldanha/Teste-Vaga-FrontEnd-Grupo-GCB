@@ -45,27 +45,29 @@
       }
 
       a {
-        span {
-          font: normal normal 600 1rem "Muli", sans-serif;
-          color: var(--white);
-          text-transform: uppercase;
-          margin-right: 4rem;
-          transition: all 0.3s ease;
+        font: normal normal 600 1rem "Muli", sans-serif;
+        color: var(--white);
+        text-transform: uppercase;
+        margin-right: 4rem;
+        transition: all 0.3s ease;
+
+        &.--on-page-register {
+          color: var(--green-300);
+        }
+
+        &.--scrolling {
+          color: var(--blue-800);
+        }
+
+        @media screen and (max-width: 1440px) {
+          margin-right: 2rem;
+        }
+
+        @media screen and (max-width: 1200px) {
+          color: var(--green-300);
 
           &.--scrolling {
             color: var(--blue-800);
-          }
-
-          @media screen and (max-width: 1440px) {
-            margin-right: 2rem;
-          }
-
-          @media screen and (max-width: 1200px) {
-            color: var(--green-300);
-
-            &.--scrolling {
-              color: var(--blue-800);
-            }
           }
         }
       }

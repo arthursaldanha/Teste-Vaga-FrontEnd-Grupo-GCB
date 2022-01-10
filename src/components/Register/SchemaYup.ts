@@ -20,21 +20,21 @@ export const RegisterUserSchema = Yup.object().shape({
   cep: Yup.string().max(9).required("Este campo é obrigatório!"),
 
   bairro: Yup.string()
-    .min(2, "Digite um bairro com no mínimo 2 caracteres")
+    .min(3, "Digite um bairro válido!")
     .required("Este campo é obrigatório!"),
 
   cidade: Yup.string()
-    .min(2, "Digite um bairro com no mínimo 2 caracteres")
+    .min(3, "Digite uma cidade válida")
     .required("Este campo é obrigatório!"),
 
   complemento: Yup.string(),
 
   logradouro: Yup.string()
-    .min(2, "Digite um bairro com no mínimo 2 caracteres")
+    .min(5, "Digite um bairro válido!")
     .required("Este campo é obrigatório!"),
 
   uf: Yup.string()
-    .min(2, "Digite a UF corretamente")
-    .max(2, "Digite a UF corretamente")
+    .min(2, "Digite a UF corretamente!")
+    .max(2, "Digite a UF corretamente!")
     .required("Este campo é obrigatório!"),
 });

@@ -3,7 +3,9 @@ import { Formik, Form, FormikHelpers } from "formik";
 import { RegisterUserSchema } from "./SchemaYup";
 
 // Components
-import { Input } from "../InputRegister/Input";
+import { Input, Row } from "../Index";
+
+import "./styles.scss";
 
 interface RegisterUser {
   nome: string;
@@ -39,8 +41,8 @@ export const RegisterNewUser = () => {
   }
 
   return (
-    <div>
-      <h1>Signup</h1>
+    <div className="form-new-user">
+      <h2>Fill out the fields with your information</h2>
       <Formik
         initialValues={{
           nome: "",
@@ -61,114 +63,137 @@ export const RegisterNewUser = () => {
           { setSubmitting }: FormikHelpers<RegisterUser>
         ) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            // localStorage
+            let user = JSON.parse(localStorage.getItem("user") || "[]");
+            user.push(values);
+            localStorage.setItem("user", JSON.stringify(user));
+            console.log("Salva com sucesso.");
+
+            // alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 500);
         }}
         render={({ errors, touched, isValid, setFieldValue }) => (
           <Form>
-            <Input
-              label="Nome completo:"
-              name="nome"
-              type="text"
-              placeholder="Seu nome completo"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Data de Nascimento:"
-              name="dataDeNascimento"
-              type="date"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="CPF:"
-              name="cpf"
-              type="text"
-              placeholder="Seu CPF"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Email:"
-              name="email"
-              type="text"
-              placeholder="Seu email"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Telefone:"
-              name="telefone"
-              type="text"
-              placeholder="Seu telefone"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="CEP:"
-              name="cep"
-              type="text"
-              placeholder="Seu CEP"
-              width={50}
-              onBlur={(event) => getCEP(event, setFieldValue)}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Logradouro:"
-              name="logradouro"
-              type="text"
-              placeholder="Seu logradouro"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Complemento:"
-              name="complemento"
-              type="text"
-              placeholder="Casa, apartamento, flat..."
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Bairro:"
-              name="bairro"
-              type="text"
-              placeholder="Bairro onde mora"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="Cidade:"
-              name="cidade"
-              type="text"
-              placeholder="Cidade onde mora"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <Input
-              label="UF:"
-              name="uf"
-              type="text"
-              placeholder="Digite a UF de sua cidade!"
-              width={50}
-              errors={errors}
-              touched={touched}
-            />
-            <button type="submit" disabled={!isValid}>
-              Submit
-            </button>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Nome completo:"
+                name="nome"
+                type="text"
+                placeholder="Ex. João Guilherme de Araújo"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Email:"
+                name="email"
+                type="text"
+                placeholder="exemplo@exemplo.com"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="CPF:"
+                name="cpf"
+                type="text"
+                placeholder="Ex. 616.289.880-61"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+              <Input
+                label="Data de Nascimento:"
+                name="dataDeNascimento"
+                type="date"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Telefone:"
+                name="telefone"
+                type="text"
+                placeholder="Ex. (11) 91234-5678"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+              <Input
+                label="CEP:"
+                name="cep"
+                type="text"
+                placeholder="Ex. 12345-678"
+                width={100}
+                onBlur={(event) => getCEP(event, setFieldValue)}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Logradouro:"
+                name="logradouro"
+                type="text"
+                placeholder="Ex. Rua Pedro Abreu de Souza"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Complemento:"
+                name="complemento"
+                type="text"
+                placeholder="Ex. Casa, apartamento, flat..."
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+              <Input
+                label="Bairro:"
+                name="bairro"
+                type="text"
+                placeholder="Ex. Ibirapuera"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+            <Row justify="flex-start" align="start">
+              <Input
+                label="Cidade:"
+                name="cidade"
+                type="text"
+                placeholder="Ex. São Paulo"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+              <Input
+                label="UF:"
+                name="uf"
+                type="text"
+                placeholder="Ex. SP"
+                width={100}
+                errors={errors}
+                touched={touched}
+              />
+            </Row>
+
+            <Row justify="center" align="center">
+              <button type="submit" disabled={!isValid}>
+                Submit
+              </button>
+            </Row>
           </Form>
         )}
       />

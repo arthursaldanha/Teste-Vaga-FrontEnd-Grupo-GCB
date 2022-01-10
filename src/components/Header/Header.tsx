@@ -10,11 +10,15 @@ import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 
 // Components
-import { SidebarMenu } from "../SidebarMenu/SidebarMenu";
+import { SidebarMenu } from "../Index";
 
 import "./styles.scss";
 
-export const Header = () => {
+interface HeaderProps {
+  onRegister: boolean;
+}
+
+export const Header = ({ onRegister }: HeaderProps) => {
   const {
     isSidebarMenuActive,
     isNavbarShowing,
@@ -64,14 +68,29 @@ export const Header = () => {
         <div className="c-header">
           <h1 className={changingOnScroll}>Healthy Food</h1>
           <nav className={`navbar ${isNavbarShowing ? "--disabled" : ""}`}>
-            <Link to="/">
-              <span className={changingOnScroll}>healthy recipes</span>
+            <Link
+              to="/"
+              className={`${changingOnScroll} ${
+                onRegister ? "--on-page-register" : ""
+              }`}
+            >
+              healthy recipes
             </Link>
-            <Link to="/">
-              <span className={changingOnScroll}>blog</span>
+            <Link
+              to="/"
+              className={`${changingOnScroll} ${
+                onRegister ? "--on-page-register" : ""
+              }`}
+            >
+              blog
             </Link>
-            <Link to="/">
-              <span className={changingOnScroll}>join</span>
+            <Link
+              to="/"
+              className={`${changingOnScroll} ${
+                onRegister ? "--on-page-register" : ""
+              }`}
+            >
+              join
             </Link>
             {location.pathname !== "/register" && (
               <Link to="/register">

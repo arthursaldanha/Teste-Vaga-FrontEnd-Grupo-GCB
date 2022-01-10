@@ -13,7 +13,7 @@ interface InputProps {
   errors: any;
   touched: any;
   defaultValue?: string;
-  onChange?: () => void;
+  onChange?: (event) => void;
   onInput?: () => void;
   onBlur?: (event) => Promise<any>;
 }

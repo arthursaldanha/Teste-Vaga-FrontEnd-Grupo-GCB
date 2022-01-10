@@ -11,7 +11,7 @@ import {
 export function Home() {
   return (
     <>
-      <Header />
+      <Header onRegister={false} />
       <BannerHome />
       <OurRecipes />
       <AboutServices />
