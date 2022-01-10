@@ -1,0 +1,39 @@
+.button-scroll-to-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+
+  @media screen and (max-width: 980px) {
+    bottom: 1.8rem;
+    right: 1.8rem;
+  }
+
+  @media screen and (max-width: 460px) {
+    bottom: 1.3rem;
+    right: 1.3rem;
+  }
+
+  button {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--blue-800);
+    font-size: 0;
+
+    @media screen and (max-width: 980px) {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+
+    @media screen and (max-width: 460px) {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+
+    .button-fixed-scroll-to-top {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

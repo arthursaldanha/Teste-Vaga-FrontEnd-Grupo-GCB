@@ -26,6 +26,7 @@ export const Header = ({ onRegister }: HeaderProps) => {
     handleOpenSidebarMenu,
     onIsScrollActive,
     changeVisibilityNavbar,
+    isButtonScrollToTop,
   } = useMenuSidebar();
 
   const location = useLocation();
@@ -39,6 +40,7 @@ export const Header = ({ onRegister }: HeaderProps) => {
   window.onscroll = function () {
     var top = window.pageYOffset || document.documentElement.scrollTop;
     top > 50 ? onIsScrollActive(true) : onIsScrollActive(false);
+    top > 300 ? isButtonScrollToTop(true) : isButtonScrollToTop(false);
   };
 
   window.onresize = function () {
