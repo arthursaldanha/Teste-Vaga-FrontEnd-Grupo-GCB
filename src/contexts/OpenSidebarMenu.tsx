@@ -38,7 +38,6 @@ export const HomeProvider = ({ children }: OpenMenuProviderProps) => {
   };
 
   const handleClickedMenu = () => {
-    window.scrollTo(0, 0);
     setIsSidebarMenuActive(false);
   };
 

@@ -26,18 +26,25 @@ export const SidebarMenu = ({
     <div className={bgSidebarMenu} onClick={handleClickOutside}>
       <aside className={`sidebar-menu ${isScrollActive ? "--scrolling" : ""}`}>
         <div>
-          {sidebarMenuContent.map(({ content, path }, index) => {
+          {sidebarMenuContent.map(({ content, link }, index) => {
             return (
-              <Link
-                to={path}
+              <a
+                href={link}
                 className={styleIsScrollActive}
                 onClick={handleClickedMenu}
                 key={index}
               >
                 <span>{content}</span>
-              </Link>
+              </a>
             );
           })}
+          <Link
+            to="/register"
+            className={styleIsScrollActive}
+            onClick={handleClickedMenu}
+          >
+            <span>Register</span>
+          </Link>
         </div>
       </aside>
     </div>

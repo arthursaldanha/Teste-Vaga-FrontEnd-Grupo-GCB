@@ -85,9 +85,9 @@ export const Header = ({ onRegister }: HeaderProps) => {
         <div className="c-header">
           <h1 className={changingOnScroll}>Healthy Food</h1>
           <nav className={`navbar ${isNavbarShowing ? "--disabled" : ""}`}>
-            {contentMenu.map(({ link, className, content }) => {
+            {contentMenu.map(({ link, className, content }, index) => {
               return (
-                <a href={link} className={className}>
+                <a href={link} className={className} key={content}>
                   {content}
                 </a>
               );

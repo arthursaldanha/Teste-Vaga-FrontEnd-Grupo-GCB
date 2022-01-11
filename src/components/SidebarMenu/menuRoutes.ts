@@ -1,18 +1,14 @@
 export const sidebarMenuContent = [
   {
+    link: "#our-services",
     content: "Healthy recipes",
-    path: "/",
   },
   {
+    link: "#read-blog",
     content: "Blog",
-    path: "/",
   },
   {
+    link: "#join",
     content: "Join",
-    path: "/",
-  },
-  {
-    content: "Register",
-    path: "/register",
   },
 ];
