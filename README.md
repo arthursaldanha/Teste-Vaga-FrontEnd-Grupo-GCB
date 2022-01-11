@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Vaga FrontEnd - Grupo GCB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projetinho foi feito para concorrer a vaga de Desenvolvedor Júnior FrontEnd no Grupo GCB!
 
-## Available Scripts
+## Versão Desktop:
+![screencapture-arthursaldanhha-testefrontendgrupogcb-netlify-app-2022-01-11-04_48_16](https://user-images.githubusercontent.com/30752069/148902281-f3a45f9e-a591-42c4-aa44-aefc7cd93be4.png)
 
-In the project directory, you can run:
+## Versão Mobile:
+![screencapture-arthursaldanhha-testefrontendgrupogcb-netlify-app-2022-01-11-04_49_48](https://user-images.githubusercontent.com/30752069/148902337-bfae7b46-cf58-4649-b562-06b9a9b5e787.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Índice
+- [Visão geral](#visão-geral)
+  - [O desafio](#o-desafio)
+  - [Link](#link-do-projeto)
+- [Meu processo](#meu-processo)
+  - [Criado com](#criado-com)
+  - [Pacotes usados](#pacotes-usados)
+- [Autor](#autor)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Visão geral
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### O desafio
+O objetivo do projeto é mostrar minhas capacidades e desenvolturas no desenvolvimento front-end passando um layout do Adobe XD de forma fiel para o código!
 
-### `npm run build`
+### Link do Projeto
+- URL do projeto ativo: [Projeto ativo](https://arthursaldanhha-testefrontendgrupogcb.netlify.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Meu processo
+### Criado com
+- HTML5 semântico
+- Sass (Pré-processador CSS)
+- TypeScript
+- React.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pacotes usados
+- Axios (requisições)
+- Formik (formulário)
+- Yup (validação do formulário)
+- Js-cookie (armazenamento em Cookies)
+- React-icons (icones de SVG)
+- React Router DOM (rotas)
+- React Toastfy (notificações)
+- Sass (estilização)
+- TypeScript (desenvolvimento)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autor
+- Instagram - [@saldanha.jpg](https://www.instagram.com/saldanha.jpg/)
+- LinkedIn - [Arthur Saldanha](https://www.linkedin.com/in/arthursaldanha/)
+- Telegram [@asalds](https://t.me/asalds)
