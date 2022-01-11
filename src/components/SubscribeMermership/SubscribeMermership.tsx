@@ -3,7 +3,7 @@ import image from "../../assets/images/bloco_final_image.svg";
 
 export const SubscribeMembership = () => {
   return (
-    <section className="subscribe-membership">
+    <section className="subscribe-membership" id="join">
       <div className="subscribe-membership-content">
         <div className="c-subscribe-membership">
           <h2>Join our membership to get special offer</h2>

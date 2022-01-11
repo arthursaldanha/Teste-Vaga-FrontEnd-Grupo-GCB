@@ -19,7 +19,7 @@ export const ReadOurBlog = () => {
   };
 
   return (
-    <section className="c-our-blog">
+    <section className="c-our-blog" id="read-blog">
       <h2>Read Our Blog</h2>
       <p>
         Far far away, behind the word mountains, far from the countries Vokalia

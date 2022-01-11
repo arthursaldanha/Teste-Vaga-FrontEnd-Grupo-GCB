@@ -40,17 +40,17 @@ export const Header = ({ onRegister }: HeaderProps) => {
 
   const contentMenu = [
     {
-      link: "/#our-services",
+      link: "#our-services",
       className: classNameLinks,
       content: "healthy recipes",
     },
     {
-      link: "/#read-blog",
+      link: "#read-blog",
       className: classNameLinks,
       content: "blog",
     },
     {
-      link: "/#join",
+      link: "#join",
       className: classNameLinks,
       content: "join",
     },
@@ -87,9 +87,9 @@ export const Header = ({ onRegister }: HeaderProps) => {
           <nav className={`navbar ${isNavbarShowing ? "--disabled" : ""}`}>
             {contentMenu.map(({ link, className, content }) => {
               return (
-                <Link to={link} className={className}>
+                <a href={link} className={className}>
                   {content}
-                </Link>
+                </a>
               );
             })}
             {location.pathname !== "/register" && (
