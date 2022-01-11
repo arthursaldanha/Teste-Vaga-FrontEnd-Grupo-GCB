@@ -19,7 +19,6 @@
 
       @media screen and (max-width: 1200px) {
         padding: 8rem 2rem 3rem;
-        width: 50%;
       }
 
       @media screen and (max-width: 860px) {
@@ -31,15 +30,20 @@
       }
 
       h2 {
-        width: 100%;
+        width: 60%;
         font-weight: 600;
         font-size: 3rem;
         line-height: 4.375rem;
         margin-bottom: 5rem;
 
+        @media screen and (max-width: 1617px) {
+          width: 80%;
+        }
+
         @media screen and (max-width: 1200px) {
           margin-bottom: 2rem;
           text-align: center;
+          width: 100%;
         }
 
         @media screen and (max-width: 540px) {
