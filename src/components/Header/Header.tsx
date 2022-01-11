@@ -64,7 +64,7 @@ export const Header = ({ onRegister }: HeaderProps) => {
     if (window.innerWidth > 980) {
       handleOpenSidebarMenu(false);
     }
-  }, [window.innerWidth, changeVisibilityNavbar, handleOpenSidebarMenu]);
+  }, [changeVisibilityNavbar, handleOpenSidebarMenu]);
 
   window.onscroll = function () {
     var top = window.pageYOffset || document.documentElement.scrollTop;
