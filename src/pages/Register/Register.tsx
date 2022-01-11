@@ -27,11 +27,14 @@ export function Register() {
           <section className="content-register-page">
             <h1>Sign Up</h1>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove right at the coast of the Semantics, a
-              large language ocean. A small river named Duden flows by their
-              place and supplies it with the necessary regelialia
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci
+              nihil, incidunt laboriosam repudiandae a suscipit totam delectus
+              inventore reprehenderit sapiente dolor eaque aperiam dolores non
+              fugiat facilis quisquam praesentium mollitia? Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Doloribus, vitae illum,
+              illo, accusamus omnis quisquam tempora optio officiis ducimus
+              nihil facere. Saepe dolorem cumque blanditiis nostrum sequi fuga
+              natus aliquid!
             </p>
           </section>
 

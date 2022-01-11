@@ -17,9 +17,9 @@ interface MenuContextData {
   isButtonScrollToTop: (state: boolean) => void;
 }
 
-export const OpenMenuContext = createContext({} as MenuContextData);
+export const HomeContext = createContext({} as MenuContextData);
 
-export const OpenMenuProvider = ({ children }: OpenMenuProviderProps) => {
+export const HomeProvider = ({ children }: OpenMenuProviderProps) => {
   const [isScrollActive, setIsScrollActive] = useState(false);
   const [isNavbarShowing, setIsNavbarShowing] = useState(false);
   const [isSidebarMenuActive, setIsSidebarMenuActive] = useState(false);
@@ -51,7 +51,7 @@ export const OpenMenuProvider = ({ children }: OpenMenuProviderProps) => {
   };
 
   return (
-    <OpenMenuContext.Provider
+    <HomeContext.Provider
       value={{
         isScrollActive,
         isNavbarShowing,
@@ -66,10 +66,10 @@ export const OpenMenuProvider = ({ children }: OpenMenuProviderProps) => {
       }}
     >
       {children}
-    </OpenMenuContext.Provider>
+    </HomeContext.Provider>
   );
 };
 
-export function useMenuSidebar() {
-  return useContext(OpenMenuContext);
+export function useHome() {
+  return useContext(HomeContext);
 }

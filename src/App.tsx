@@ -1,4 +1,4 @@
-import { OpenMenuProvider } from "./contexts/OpenSidebarMenu";
+import { HomeProvider } from "./contexts/OpenSidebarMenu";
 import { RoutesApp } from "./routes/routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,10 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
-      <OpenMenuProvider>
+      <HomeProvider>
         <RoutesApp />
         <ToastContainer />
-      </OpenMenuProvider>
+      </HomeProvider>
     </div>
   );
 }

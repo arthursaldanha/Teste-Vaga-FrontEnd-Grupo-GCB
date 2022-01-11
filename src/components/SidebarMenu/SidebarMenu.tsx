@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // Components
-import { useMenuSidebar } from "../../contexts/OpenSidebarMenu";
+import { useHome } from "../../contexts/OpenSidebarMenu";
 import { sidebarMenuContent } from "./menuRoutes";
 
 import "./styles.scss";
@@ -14,7 +14,7 @@ export const SidebarMenu = ({
   bgSidebarMenu = "dark-bg-sidebar-menu",
 }: SidebarMenuProps) => {
   const { isScrollActive, handleOpenSidebarMenu, handleClickedMenu } =
-    useMenuSidebar();
+    useHome();
 
   const handleClickOutside = (e) => {
     if (e.target.className === bgSidebarMenu) handleOpenSidebarMenu(false);

@@ -1,5 +1,5 @@
 import { BsArrowUp } from "react-icons/bs";
-import { useMenuSidebar } from "../../contexts/OpenSidebarMenu";
+import { useHome } from "../../contexts/OpenSidebarMenu";
 import {
   Header,
   BannerHome,
@@ -13,7 +13,7 @@ import {
 import "./styles.scss";
 
 export function Home() {
-  const { isScrollToTopActive, handleClickedScrollToTop } = useMenuSidebar();
+  const { isScrollToTopActive, handleClickedScrollToTop } = useHome();
 
   return (
     <>
