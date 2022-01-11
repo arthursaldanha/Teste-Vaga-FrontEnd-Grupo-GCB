@@ -60,7 +60,11 @@ export const Header = ({ onRegister }: HeaderProps) => {
     window.innerWidth > 980
       ? changeVisibilityNavbar(false)
       : changeVisibilityNavbar(true);
-  }, [changeVisibilityNavbar]);
+
+    if (window.innerWidth > 980) {
+      handleOpenSidebarMenu(false);
+    }
+  }, [window.innerWidth, changeVisibilityNavbar, handleOpenSidebarMenu]);
 
   window.onscroll = function () {
     var top = window.pageYOffset || document.documentElement.scrollTop;
@@ -75,6 +79,9 @@ export const Header = ({ onRegister }: HeaderProps) => {
       document.body.clientWidth;
 
     width > 980 ? changeVisibilityNavbar(false) : changeVisibilityNavbar(true);
+    if (width > 980) {
+      handleOpenSidebarMenu(false);
+    }
   };
 
   return (
